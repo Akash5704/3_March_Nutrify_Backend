@@ -8,7 +8,7 @@ const AutoIncrement = require('mongoose-sequence')(mongoose);
 const UserSchema = new Schema({
   user_id: {
     type: Number,
-    unique: true
+    unique:true
   },
   email: { 
     type: String, 
@@ -73,6 +73,8 @@ const UserSchema = new Schema({
 }, { 
   timestamps: true 
 });
+
+
 UserSchema.virtual('age').get(function() {
   const year = Number(this.year) || 2000;
   const month = Number(this.month) || 1;
